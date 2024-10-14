@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#debug {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  height: 200px;
+  overflow-y: auto;
+}
+
+#debug p {
+  margin: 0;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.score-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.score-bar {
+  width: 100%;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 30px;
+  position: relative;
+}
+
+.score-fill {
+  background-color: red;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  transition: width 1s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.score-icon {
+  position: absolute;
+  right: 5px; /* L'icône sera alignée à la fin de la barre */
+  top: 50%;
+  transform: translateY(-50%);
+  display: none; /* Cachée par défaut */
+}
+
+#score-text {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Conteneur pour l'effet feu d'artifice */
+.fireworks-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: none; /* Caché par défaut */
+}
+
+.firework {
+  width: 20px; /* Taille plus grande pour être bien visible */
+  height: 20px;
+  background-color: red; /* Couleur visible */
+  border-radius: 50%; /* Forme circulaire */
+  position: absolute;
+  animation: explode 1s ease-out forwards;
+}
+
+/* Animation pour le feu d'artifice */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4); /* Augmenter la taille lors de l'explosion */
+    opacity: 0;
+  }
+}
+
+#fireworksCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  pointer-events: none; /* Pour ne pas interférer avec les clics */
+}
