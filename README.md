@@ -17,28 +17,28 @@ Tu peux créer une librairie réutilisable de composants pour SCORM en identifia
 C’est un fichier clé dans chaque projet SCORM. Son contenu sera assez similaire entre les projets, avec seulement quelques changements pour les titres ou les fichiers de contenu. Tu peux créer une structure de base et ne modifier que les métadonnées spécifiques pour chaque objet SCORM.
 Exemple d’un imsmanifest.xml générique :
 
-<manifest identifier="com.example.course"
+          <manifest identifier="com.example.course"
           version="1.2"
           xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
           xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2">
-<metadata>
-<schema>ADL SCORM</schema>
-<schemaversion>1.2</schemaversion>
-</metadata>
-<organizations default="defaultOrg">
-<organization identifier="defaultOrg">
-<item identifier="item1" identifierref="resource1">
-
-<title>Quiz Interaction</title>
-</item>
-</organization>
-</organizations>
-<resources>
-<resource identifier="resource1" type="webcontent" adlcp:scormtype="sco" href="index.html">
-<file href="index.html"/>
-</resource>
-</resources>
-</manifest>
+          <metadata>
+          <schema>ADL SCORM</schema>
+          <schemaversion>1.2</schemaversion>
+          </metadata>
+          <organizations default="defaultOrg">
+          <organization identifier="defaultOrg">
+          <item identifier="item1" identifierref="resource1">
+          
+          <title>Quiz Interaction</title>
+          </item>
+          </organization>
+          </organizations>
+          <resources>
+          <resource identifier="resource1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+          <file href="index.html"/>
+          </resource>
+          </resources>
+          </manifest>
 
 ### 2. La structure HTML/JavaScript pour les interactions :
 
@@ -46,14 +46,14 @@ HTML : Tes pages HTML peuvent contenir des modèles de base pour les types d’i
 JavaScript : Crée une bibliothèque de fonctions JavaScript pour gérer les interactions SCORM, comme l’envoi du score, l’enregistrement de la progression, ou l’affichage des résultats.
 Par exemple, tu peux avoir une fonction réutilisable pour envoyer un score :
 
-function sendScoreToSCORM(score, maxScore) {
-if (scormAPI) {
-scormAPI.LMSSetValue("cmi.core.score.raw", score);
-scormAPI.LMSSetValue("cmi.core.score.max", maxScore);
-scormAPI.LMSCommit("");
-alert("Score envoyé : " + score + " / " + maxScore);
-}
-}
+          function sendScoreToSCORM(score, maxScore) {
+          if (scormAPI) {
+          scormAPI.LMSSetValue("cmi.core.score.raw", score);
+          scormAPI.LMSSetValue("cmi.core.score.max", maxScore);
+          scormAPI.LMSCommit("");
+          alert("Score envoyé : " + score + " / " + maxScore);
+          }
+          }
 
 ### 3. Interactions spécifiques (quiz, drag-and-drop, etc.) :
 
@@ -93,10 +93,10 @@ Chaque module peut être une page HTML/JS distincte dans ton package SCORM.
 Ajoute des fonctions communes pour gérer la progression de l'apprenant (comme l'enregistrement de l'endroit où il s'est arrêté) et la méthode d'évaluation (note moyenne, meilleure tentative, etc.).
 Par exemple, tu peux créer une fonction qui enregistre la position de progression :
 
-function saveProgress(step) {
-scormAPI.LMSSetValue("cmi.core.lesson_location", step);
-scormAPI.LMSCommit("");
-}
+          function saveProgress(step) {
+          scormAPI.LMSSetValue("cmi.core.lesson_location", step);
+          scormAPI.LMSCommit("");
+          }
 
 ### 3. Organisation et capitalisation :
 
