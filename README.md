@@ -117,3 +117,12 @@ Capitalise sur les éléments récurrents (manifest, interactions SCORM, gestion
 Crée des modules réutilisables pour les types d'interactions éducatives comme les quiz, les exercices de drag-and-drop.
 Automatise la génération des packages SCORM en regroupant les modules dans un générateur de packages.
 Cela te permettra de réutiliser tes composants et de les personnaliser facilement pour différents projets. Si tu veux commencer par créer un module spécifique ou explorer plus en détail une fonctionnalité, je suis là pour t'aider ! 😊
+
+### Back home
+
+**Description :** Projet central pour organiser et suivre tous mes autres projets.
+[Lien vers le dépôt](https://github.com/ugadavid/project-manager)
+
+## Comment contribuer
+
+Envoyez moi votre mail sur le groupe WhatsApp
